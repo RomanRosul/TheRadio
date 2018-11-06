@@ -10,6 +10,7 @@
 		D975E49F2167AE4300582E5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D975E49E2167AE4300582E5B /* AppDelegate.swift */; };
 		D975E4A12167AE4500582E5B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D975E4A02167AE4500582E5B /* Assets.xcassets */; };
 		D975E4A42167AE4500582E5B /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = D975E4A22167AE4500582E5B /* MainMenu.xib */; };
+		D9B191082190921C005366DC /* StatusMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B191072190921C005366DC /* StatusMenuController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		D975E4A32167AE4500582E5B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		D975E4A52167AE4500582E5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D975E4A62167AE4500582E5B /* TheRadio.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TheRadio.entitlements; sourceTree = "<group>"; };
+		D9B191072190921C005366DC /* StatusMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusMenuController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 				D975E4A22167AE4500582E5B /* MainMenu.xib */,
 				D975E4A52167AE4500582E5B /* Info.plist */,
 				D975E4A62167AE4500582E5B /* TheRadio.entitlements */,
+				D9B191072190921C005366DC /* StatusMenuController.swift */,
 			);
 			path = TheRadio;
 			sourceTree = "<group>";
@@ -130,6 +133,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9B191082190921C005366DC /* StatusMenuController.swift in Sources */,
 				D975E49F2167AE4300582E5B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -267,7 +271,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = TheRadio/TheRadio.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 39KAHAGNTM;
@@ -286,7 +289,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = TheRadio/TheRadio.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 39KAHAGNTM;
