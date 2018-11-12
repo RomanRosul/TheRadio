@@ -16,7 +16,7 @@
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
         <customObject id="Y2g-Us-B09" customClass="StatusMenuController" customModule="TheRadio" customModuleProvider="target">
             <connections>
-                <outlet property="playPauseMenuItem" destination="Cmk-iU-wK0" id="hRG-Gb-XFH"/>
+                <outlet property="playerStatusMenuItem" destination="Cmk-iU-wK0" id="cRT-sP-O1N"/>
                 <outlet property="statusMenu" destination="EZZ-6k-7RB" id="GiO-Y3-rzd"/>
             </connections>
         </customObject>
