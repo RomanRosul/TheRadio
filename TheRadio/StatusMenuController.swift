@@ -10,6 +10,7 @@
 
 protocol StatusMenuControllerInterface {
     func setStatusItemTitle(_ title: String)
+    func setStatusItemImage(_ image: NSImage?)
 }
 
 import Cocoa
@@ -25,9 +26,8 @@ class StatusMenuController: NSObject {
     //MARK: LifeCycle
     
     override func awakeFromNib() {
-        let icon = NSImage(named: "statusBarIcon")
-        icon?.isTemplate = true
-        statusItem.image = icon
+        let icon = NSImage(named: "logoYedenOn")
+        setStatusItemImage(icon)
         statusItem.menu = statusMenu
         buildAllInstances()
         
@@ -71,5 +71,10 @@ extension StatusMenuController: StatusMenuControllerInterface {
     
     func setStatusItemTitle(_ title: String) {
         playerStatusMenuItem.title = title
+    }
+    
+    func setStatusItemImage(_ image: NSImage?) {
+        image?.isTemplate = true
+        statusItem.image = image
     }
 }

@@ -49,6 +49,7 @@ class AudioPlayerHandler: NSObject, AudioPlayerHandlerInterface {
         } else {
             isPausedManually = !isPausedManually
             statusMenu?.setStatusItemTitle("No Internet Connection")
+            statusMenu?.setStatusItemImage(PlayerStatusList.isWaiting.icon())
         }
     }
     
@@ -77,7 +78,7 @@ class AudioPlayerHandler: NSObject, AudioPlayerHandlerInterface {
                 self?.play()
             } else {
                 let newStatus = self?.player?.timeControlStatus
-                if let status = newStatus?.rawValue, let newTitle = PlayerStatusTitles(rawValue: status)?.title() {
+                if let status = newStatus?.rawValue, let newTitle = PlayerStatusList(rawValue: status)?.title() {
                     self?.statusMenu?.setStatusItemTitle(newTitle)
                 }
             }
@@ -101,10 +102,14 @@ class AudioPlayerHandler: NSObject, AudioPlayerHandlerInterface {
         let statusKeyPath = \AVPlayer.timeControlStatus
         observation = player?.observe(statusKeyPath, options: [.initial, .old]) { [weak self] (player, change) in
             let newStatus = player.timeControlStatus
-            if let newTitle = PlayerStatusTitles(rawValue: newStatus.rawValue)?.title() {
+            if let newTitle = PlayerStatusList(rawValue: newStatus.rawValue)?.title() {
                 if self?.reachability.connection != Reachability.Connection.none {
                     self?.statusMenu?.setStatusItemTitle(newTitle)
                 }
+            }
+            
+            if let newIcon = PlayerStatusList(rawValue: newStatus.rawValue)?.icon() {
+                self?.statusMenu?.setStatusItemImage(newIcon)
             }
         }
     }
