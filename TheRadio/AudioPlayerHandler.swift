@@ -17,49 +17,95 @@ class AudioPlayerHandler: NSObject, AudioPlayerHandlerInterface {
     var player: AVPlayer?
     var statusMenu: StatusMenuControllerInterface?
     var observation: AnyObject?
+    let reachability = Reachability()!
+    var isPausedManually: Bool = false
+    
+    override init() {
+        super.init()
+        setupReachability()
+    }
     
     deinit {
         observation?.invalidate()
     }
     
     func play() {
-        if let player = player {
-            if player.timeControlStatus == .playing {
-                player.pause()
-                return
-            } else if player.timeControlStatus == .paused {
-                player.play()
+        if reachability.connection != Reachability.Connection.none {
+            if let player = player {
+                if player.timeControlStatus == .playing {
+                    player.pause()
+                    isPausedManually = true
+                    return
+                } else if player.timeControlStatus == .paused {
+                    reload()
+                    player.play()
+                    isPausedManually = false
+                }
+            } else {
+                setupPlayer()
+                player?.play()
+                isPausedManually = false
             }
         } else {
-            setupPlayer()
-            player?.play()
+            isPausedManually = !isPausedManually
+            statusMenu?.setStatusItemTitle("No Internet Connection")
+        }
+    }
+    
+    func reload() {
+        self.player?.replaceCurrentItem(with: setupPlayerItem())
+    }
+    
+    func handleInteruptions() {
+        //TODO:
+        //        try? AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback, mode: AVAudioSessionModeDefault)
+        //        try? AVAudioSession.sharedInstance().setActive(true)
+//        https://blog.erikvdwal.nl/resuming-avplayer-after-being-interrupted/
+    }
+    
+    func setupPlayerItem() -> AVPlayerItem? {
+        let path = GeneralURLs.stream.rawValue
+        guard let url = URL.init(string: path) else { return nil}
+        return AVPlayerItem.init(url: url)
+    }
+    
+    func setupReachability() {
+        
+        reachability.whenReachable = { [weak self]  reachability in
+            if self?.isPausedManually == false {
+                self?.reload()
+                self?.play()
+            } else {
+                let newStatus = self?.player?.timeControlStatus
+                if let status = newStatus?.rawValue, let newTitle = PlayerStatusTitles(rawValue: status)?.title() {
+                    self?.statusMenu?.setStatusItemTitle(newTitle)
+                }
+            }
+        }
+        
+        reachability.whenUnreachable = { [weak self] _ in
+            self?.statusMenu?.setStatusItemTitle("No Internet Connection")
+        }
+        
+        do {
+            try reachability.startNotifier()
+        } catch {
+            print("Unable to start notifier")
         }
     }
     
     func setupPlayer() {
-        let path = GeneralURLs.stream.rawValue
-        guard let url = URL.init(string: path) else { return }
-        let playerItem = AVPlayerItem.init(url: url)
-        player = AVPlayer.init(playerItem: playerItem)
-        let statusKeyPath = \AVPlayer.timeControlStatus
         
+        player = AVPlayer.init(playerItem: setupPlayerItem())
+        
+        let statusKeyPath = \AVPlayer.timeControlStatus
         observation = player?.observe(statusKeyPath, options: [.initial, .old]) { [weak self] (player, change) in
             let newStatus = player.timeControlStatus
             if let newTitle = PlayerStatusTitles(rawValue: newStatus.rawValue)?.title() {
-                self?.statusMenu?.setStatusItemTitle(newTitle)
+                if self?.reachability.connection != Reachability.Connection.none {
+                    self?.statusMenu?.setStatusItemTitle(newTitle)
+                }
             }
-
-//            switch player.timeControlStatus {
-//            case .paused:
-//                print("*** Player status: paused")
-//
-//            case .waitingToPlayAtSpecifiedRate:
-//                print("*** Player status: waiting")
-//
-//            case .playing:
-//                print("*** Player status: playing")
-//
-//            }
         }
     }
 

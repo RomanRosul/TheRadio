@@ -24,7 +24,7 @@ enum PlayerStatusTitles: Int {
         case .isPaused:
             return "Play"
         case .isWaiting:
-            return "Please Wait..."
+            return "Loading..."
         case .isPlaying:
             return "Pause"
             
