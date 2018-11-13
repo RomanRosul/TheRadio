@@ -33,9 +33,9 @@ enum PlayerStatusList: Int {
     func icon() -> NSImage? {
         switch self {
         case .isPaused:
-            return NSImage(named: "logoYedenOff")
+            return NSImage(named: "logoYedenOff2")
         case .isWaiting:
-            return NSImage(named: "logoYedenOff")
+            return NSImage(named: "logoYedenOff2")
         case .isPlaying:
             return NSImage(named: "logoYedenOn")
         }
