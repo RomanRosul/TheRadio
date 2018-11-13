@@ -10,13 +10,27 @@
 		D908A8A12199B51F003BFD7C /* HotKeysHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D908A8A02199B51F003BFD7C /* HotKeysHandler.swift */; };
 		D908A8A42199B74C003BFD7C /* AudioPlayerHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D908A8A32199B74C003BFD7C /* AudioPlayerHandler.swift */; };
 		D908A8A62199C0A7003BFD7C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D908A8A52199C0A7003BFD7C /* Constants.swift */; };
-		D954E7FE219A278B00FEBA67 /* SPMediaKeyTapFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D954E7FD219A278B00FEBA67 /* SPMediaKeyTapFramework.framework */; };
+		D954E801219A330800FEBA67 /* SPMediaKeyTapFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D954E7FD219A278B00FEBA67 /* SPMediaKeyTapFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D975E49F2167AE4300582E5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D975E49E2167AE4300582E5B /* AppDelegate.swift */; };
 		D975E4A12167AE4500582E5B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D975E4A02167AE4500582E5B /* Assets.xcassets */; };
 		D975E4A42167AE4500582E5B /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = D975E4A22167AE4500582E5B /* MainMenu.xib */; };
 		D9B191082190921C005366DC /* StatusMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B191072190921C005366DC /* StatusMenuController.swift */; };
 		D9B9DC3421958C3A00E56233 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9B9DC3321958C3A00E56233 /* Cocoa.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D954E802219A330800FEBA67 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D954E801219A330800FEBA67 /* SPMediaKeyTapFramework.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		D908A8A02199B51F003BFD7C /* HotKeysHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotKeysHandler.swift; sourceTree = "<group>"; };
@@ -39,7 +53,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D954E7FE219A278B00FEBA67 /* SPMediaKeyTapFramework.framework in Frameworks */,
 				D9B9DC3421958C3A00E56233 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -100,6 +113,7 @@
 				D975E4972167AE4300582E5B /* Sources */,
 				D975E4982167AE4300582E5B /* Frameworks */,
 				D975E4992167AE4300582E5B /* Resources */,
+				D954E802219A330800FEBA67 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
