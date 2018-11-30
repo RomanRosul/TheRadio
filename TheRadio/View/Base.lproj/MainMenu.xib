@@ -14,10 +14,10 @@
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="TheRadio" customModuleProvider="target"/>
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
-        <customObject id="Y2g-Us-B09" customClass="StatusMenuController" customModule="TheRadio" customModuleProvider="target">
+        <customObject id="Y2g-Us-B09" customClass="MainMenuViewController" customModule="TheRadio" customModuleProvider="target">
             <connections>
+                <outlet property="mainMenuView" destination="EZZ-6k-7RB" id="2gN-KW-5xg"/>
                 <outlet property="playerStatusMenuItem" destination="Cmk-iU-wK0" id="cRT-sP-O1N"/>
-                <outlet property="statusMenu" destination="EZZ-6k-7RB" id="GiO-Y3-rzd"/>
             </connections>
         </customObject>
         <menu id="EZZ-6k-7RB">

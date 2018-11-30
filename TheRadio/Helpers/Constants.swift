@@ -18,6 +18,8 @@ enum PlayerStatusList: Int {
     case isPaused = 0
     case isWaiting = 1
     case isPlaying = 2
+    case isNetworkLost = 3
+
     
     func title() -> String {
         switch self {
@@ -27,17 +29,21 @@ enum PlayerStatusList: Int {
             return "Loading..."
         case .isPlaying:
             return "Pause"
+        case .isNetworkLost:
+            return "No Internet Connection"
         }
     }
     
     func icon() -> NSImage? {
         switch self {
         case .isPaused:
-            fallthrough
+            return NSImage(named: "logoYedenOff")
         case .isWaiting:
-            return NSImage(named: "logoYedenOff3")
+            return NSImage(named: "logoYedenWait")
         case .isPlaying:
             return NSImage(named: "logoYedenOn")
+        case .isNetworkLost:
+            return NSImage(named: "logoYedenOff")
         }
     }
     

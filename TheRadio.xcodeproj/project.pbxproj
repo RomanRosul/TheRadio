@@ -7,16 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D908A8A12199B51F003BFD7C /* HotKeysHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D908A8A02199B51F003BFD7C /* HotKeysHandler.swift */; };
-		D908A8A42199B74C003BFD7C /* AudioPlayerHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D908A8A32199B74C003BFD7C /* AudioPlayerHandler.swift */; };
+		D908A8A12199B51F003BFD7C /* HotKeysWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D908A8A02199B51F003BFD7C /* HotKeysWorker.swift */; };
+		D908A8A42199B74C003BFD7C /* AudioPlayerWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D908A8A32199B74C003BFD7C /* AudioPlayerWorker.swift */; };
 		D908A8A62199C0A7003BFD7C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D908A8A52199C0A7003BFD7C /* Constants.swift */; };
 		D954E801219A330800FEBA67 /* SPMediaKeyTapFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D954E7FD219A278B00FEBA67 /* SPMediaKeyTapFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D95A028221AA8D810012B60A /* Configurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95A028121AA8D810012B60A /* Configurator.swift */; };
+		D95A028821AA9DE00012B60A /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95A028721AA9DE00012B60A /* Reachability.swift */; };
+		D95A028A21AAA51C0012B60A /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95A028921AAA51C0012B60A /* Interactor.swift */; };
+		D95A028C21AAA52A0012B60A /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95A028B21AAA52A0012B60A /* Presenter.swift */; };
 		D975E49F2167AE4300582E5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D975E49E2167AE4300582E5B /* AppDelegate.swift */; };
 		D975E4A12167AE4500582E5B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D975E4A02167AE4500582E5B /* Assets.xcassets */; };
 		D975E4A42167AE4500582E5B /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = D975E4A22167AE4500582E5B /* MainMenu.xib */; };
-		D992000E219AC0BC00444A32 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = D992000D219AC0BC00444A32 /* Reachability.swift */; };
-		D9B191082190921C005366DC /* StatusMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B191072190921C005366DC /* StatusMenuController.swift */; };
+		D9B191082190921C005366DC /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B191072190921C005366DC /* MainMenuViewController.swift */; };
 		D9B9DC3421958C3A00E56233 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9B9DC3321958C3A00E56233 /* Cocoa.framework */; };
+		D9C053BB21A8328900087F17 /* NetworkWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C053BA21A8328900087F17 /* NetworkWorker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -34,20 +38,24 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		D908A8A02199B51F003BFD7C /* HotKeysHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotKeysHandler.swift; sourceTree = "<group>"; };
-		D908A8A32199B74C003BFD7C /* AudioPlayerHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerHandler.swift; sourceTree = "<group>"; };
+		D908A8A02199B51F003BFD7C /* HotKeysWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotKeysWorker.swift; sourceTree = "<group>"; };
+		D908A8A32199B74C003BFD7C /* AudioPlayerWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerWorker.swift; sourceTree = "<group>"; };
 		D908A8A52199C0A7003BFD7C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D954E7FD219A278B00FEBA67 /* SPMediaKeyTapFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SPMediaKeyTapFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D95A028121AA8D810012B60A /* Configurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurator.swift; sourceTree = "<group>"; };
+		D95A028721AA9DE00012B60A /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		D95A028921AAA51C0012B60A /* Interactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interactor.swift; sourceTree = "<group>"; };
+		D95A028B21AAA52A0012B60A /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
 		D975E49B2167AE4300582E5B /* TheRadio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheRadio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D975E49E2167AE4300582E5B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D975E4A02167AE4500582E5B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D975E4A32167AE4500582E5B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		D975E4A52167AE4500582E5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D975E4A62167AE4500582E5B /* TheRadio.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TheRadio.entitlements; sourceTree = "<group>"; };
-		D992000D219AC0BC00444A32 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Reachability.swift; path = "../../../../Downloads/Reachability.swift-master/Sources/Reachability.swift"; sourceTree = "<group>"; };
-		D9B191072190921C005366DC /* StatusMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusMenuController.swift; sourceTree = "<group>"; };
+		D9B191072190921C005366DC /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
 		D9B9DC2E219582BA00E56233 /* TheRadio-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TheRadio-Bridging-Header.h"; sourceTree = "<group>"; };
 		D9B9DC3321958C3A00E56233 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		D9C053BA21A8328900087F17 /* NetworkWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkWorker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +70,54 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D95A028321AA90040012B60A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D9B191072190921C005366DC /* MainMenuViewController.swift */,
+				D975E4A22167AE4500582E5B /* MainMenu.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D95A028421AA90210012B60A /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				D9B9DC2E219582BA00E56233 /* TheRadio-Bridging-Header.h */,
+				D975E4A62167AE4500582E5B /* TheRadio.entitlements */,
+				D975E4A52167AE4500582E5B /* Info.plist */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		D95A028521AA9D810012B60A /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				D95A028121AA8D810012B60A /* Configurator.swift */,
+				D95A028721AA9DE00012B60A /* Reachability.swift */,
+				D908A8A52199C0A7003BFD7C /* Constants.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		D95A028D21AAA5A80012B60A /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				D908A8A02199B51F003BFD7C /* HotKeysWorker.swift */,
+				D908A8A32199B74C003BFD7C /* AudioPlayerWorker.swift */,
+				D9C053BA21A8328900087F17 /* NetworkWorker.swift */,
+				D95A028921AAA51C0012B60A /* Interactor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		D95A028E21AAA5C10012B60A /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				D95A028B21AAA52A0012B60A /* Presenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
 		D975E4922167AE4300582E5B = {
 			isa = PBXGroup;
 			children = (
@@ -83,16 +139,12 @@
 			isa = PBXGroup;
 			children = (
 				D975E49E2167AE4300582E5B /* AppDelegate.swift */,
-				D908A8A02199B51F003BFD7C /* HotKeysHandler.swift */,
-				D908A8A32199B74C003BFD7C /* AudioPlayerHandler.swift */,
-				D9B191072190921C005366DC /* StatusMenuController.swift */,
-				D908A8A52199C0A7003BFD7C /* Constants.swift */,
-				D992000D219AC0BC00444A32 /* Reachability.swift */,
+				D95A028321AA90040012B60A /* View */,
+				D95A028E21AAA5C10012B60A /* Presenter */,
+				D95A028D21AAA5A80012B60A /* Interactor */,
+				D95A028521AA9D810012B60A /* Helpers */,
 				D975E4A02167AE4500582E5B /* Assets.xcassets */,
-				D975E4A22167AE4500582E5B /* MainMenu.xib */,
-				D9B9DC2E219582BA00E56233 /* TheRadio-Bridging-Header.h */,
-				D975E4A62167AE4500582E5B /* TheRadio.entitlements */,
-				D975E4A52167AE4500582E5B /* Info.plist */,
+				D95A028421AA90210012B60A /* SupportingFiles */,
 			);
 			path = TheRadio;
 			sourceTree = "<group>";
@@ -178,11 +230,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D95A028221AA8D810012B60A /* Configurator.swift in Sources */,
 				D908A8A62199C0A7003BFD7C /* Constants.swift in Sources */,
-				D908A8A42199B74C003BFD7C /* AudioPlayerHandler.swift in Sources */,
-				D992000E219AC0BC00444A32 /* Reachability.swift in Sources */,
-				D908A8A12199B51F003BFD7C /* HotKeysHandler.swift in Sources */,
-				D9B191082190921C005366DC /* StatusMenuController.swift in Sources */,
+				D908A8A42199B74C003BFD7C /* AudioPlayerWorker.swift in Sources */,
+				D95A028A21AAA51C0012B60A /* Interactor.swift in Sources */,
+				D95A028C21AAA52A0012B60A /* Presenter.swift in Sources */,
+				D9C053BB21A8328900087F17 /* NetworkWorker.swift in Sources */,
+				D908A8A12199B51F003BFD7C /* HotKeysWorker.swift in Sources */,
+				D9B191082190921C005366DC /* MainMenuViewController.swift in Sources */,
+				D95A028821AA9DE00012B60A /* Reachability.swift in Sources */,
 				D975E49F2167AE4300582E5B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -329,14 +385,14 @@
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/TheRadio",
 				);
-				INFOPLIST_FILE = TheRadio/Info.plist;
+				INFOPLIST_FILE = TheRadio/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.rr.radio.TheRadio;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "TheRadio/TheRadio-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "TheRadio/SupportingFiles/TheRadio-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 			};
@@ -355,14 +411,14 @@
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/TheRadio",
 				);
-				INFOPLIST_FILE = TheRadio/Info.plist;
+				INFOPLIST_FILE = TheRadio/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.rr.radio.TheRadio;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "TheRadio/TheRadio-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "TheRadio/SupportingFiles/TheRadio-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
