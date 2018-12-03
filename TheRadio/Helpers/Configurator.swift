@@ -18,13 +18,12 @@ final class Configurator {
         
         let presenter = Presenter(viewController)
         let interactor = Interactor(presenter)
-//        DispatchQueue.main.asyncAfter(deadline: .now()+5) {
-            let mediaKeysWorkerInstance = HotKeysWorker(interactor)
-            let audioPlayerWorkerInstance = AudioPlayerWorker(interactor)
-            let networkWorkerInstance = NetworkWorker(interactor)
+        let mediaKeysWorkerInstance = HotKeysWorker(interactor)
+        let audioPlayerWorkerInstance = AudioPlayerWorker(interactor)
+        let networkWorkerInstance = NetworkWorker(interactor)
 
-            interactor.setWorkers(audioPlayerWorkerInstance: audioPlayerWorkerInstance, mediaKeysWorkerInstance: mediaKeysWorkerInstance, networkWorkerInstance: networkWorkerInstance)
-//        }
+        interactor.setWorkers(audioPlayerWorkerInstance: audioPlayerWorkerInstance, mediaKeysWorkerInstance: mediaKeysWorkerInstance, networkWorkerInstance: networkWorkerInstance)
+        viewController.interactor = interactor
         
     }
 

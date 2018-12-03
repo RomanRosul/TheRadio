@@ -86,9 +86,14 @@ extension AudioPlayerWorker: AudioPlayerWorkerInterface {
     }
     
     func stopPlayer() {
-        playerStatusObserver?.invalidate()
-        player?.pause()
-        player = nil
+//        if player == nil {
+//            return
+//        }
+            playerStatusObserver?.invalidate()
+            playerStatusObserver = nil
+            player?.pause()
+//            player?.replaceCurrentItem(with: nil)
+            player = nil
     }
     
 }

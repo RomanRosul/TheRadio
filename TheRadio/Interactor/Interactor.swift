@@ -89,7 +89,7 @@ extension Interactor: InteractorInterface {
     
     func connectionLost() {
         //player stop
-//        audioPlayerWorker?.stopPlayer()
+        audioPlayerWorker?.stopPlayer()
         
         print("*** N lost")
 
@@ -98,7 +98,7 @@ extension Interactor: InteractorInterface {
     func connectionAlive() {
         //reachability reinited automatically
         //play if needed
-//        audioPlayerWorker?.forcePlay()
+        audioPlayerWorker?.forcePlay()
         
         print("*** N alive")
 
@@ -108,9 +108,9 @@ extension Interactor: InteractorInterface {
         if networkWorker?.isNetworkReachable == true {
             presenter?.displayStatus(status)
             print("*** status \(status.title())")
-
         } else {
             presenter?.displayStatus(PlayerStatusList.isNetworkLost)
+//            audioPlayerWorker?.stopPlayer()
             print("*** status no inet")
 
         }
