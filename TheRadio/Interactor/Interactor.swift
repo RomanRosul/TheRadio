@@ -13,10 +13,8 @@ protocol InteractorInterface: class {
     func handleQuitTap()
     func handleFacebookTap()
     func handleWebTap()
-    
     func connectionLost()
-    func connectionAlive()
-    
+    func connectionEstablished()
     func playerStatusChanged(status:PlayerStatusList)
 }
 
@@ -32,18 +30,12 @@ class Interactor: NSObject {
         super.init()
         presenter = presenterInstance
     }
-
-    //Recieve Menu tap // Player Status // Network status // Keys Tap
-    //send all into presenter
-    
-    //Retain all workers
     
     func setWorkers(audioPlayerWorkerInstance: AudioPlayerWorker, mediaKeysWorkerInstance: HotKeysWorker, networkWorkerInstance: NetworkWorker) {
         mediaKeysWorker = mediaKeysWorkerInstance
         networkWorker = networkWorkerInstance
         audioPlayerWorker = audioPlayerWorkerInstance
-        
-//        audioPlayerWorker?.forcePlay()
+        audioPlayerWorker?.forcePlay()
     }
     
  //TODO:   func handleInteruptions() {
@@ -57,62 +49,44 @@ class Interactor: NSObject {
 extension Interactor: InteractorInterface {
     
     func handlePlayTap(sender: AnyObject?) {
-        //do something with player
-        audioPlayerWorker?.togglePlayStatusManually()
-        print("*** manual play")
+        let willPlay = audioPlayerWorker?.togglePlayStatusManually() == true
+        if willPlay {
+            networkWorker?.startWatchingConnection()
+        } else {
+            networkWorker?.stopWatchingConnection()
+            presenter?.displayStatus(PlayerStatusList.isPaused)
+        }
     }
     
     func handleQuitTap() {
         NSApplication.shared.terminate(self)
-        
-        print("*** quit")
-
     }
     
     func handleFacebookTap() {
         if let fbUrl = URL(string: GeneralURLs.facebook.rawValue) {
             presenter?.openURL(fbUrl)
         }
-        
-        print("*** fb")
-
     }
     
     func handleWebTap() {
         if let webUrl = URL(string: GeneralURLs.website.rawValue) {
             presenter?.openURL(webUrl)
         }
-        
-        print("*** web")
-
     }
     
     func connectionLost() {
-        //player stop
         audioPlayerWorker?.stopPlayer()
-        
-        print("*** N lost")
-
     }
     
-    func connectionAlive() {
-        //reachability reinited automatically
-        //play if needed
+    func connectionEstablished() {
         audioPlayerWorker?.forcePlay()
-        
-        print("*** N alive")
-
     }
     
     func playerStatusChanged(status:PlayerStatusList) {
         if networkWorker?.isNetworkReachable == true {
             presenter?.displayStatus(status)
-            print("*** status \(status.title())")
         } else {
             presenter?.displayStatus(PlayerStatusList.isNetworkLost)
-//            audioPlayerWorker?.stopPlayer()
-            print("*** status no inet")
-
         }
     }
     

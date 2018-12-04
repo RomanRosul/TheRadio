@@ -10,7 +10,7 @@ import Cocoa
 import AVFoundation
 
 protocol AudioPlayerWorkerInterface {
-    func togglePlayStatusManually()
+    func togglePlayStatusManually()->Bool
     func forcePlay()
     func stopPlayer()
 }
@@ -64,36 +64,26 @@ extension AudioPlayerWorker: AudioPlayerWorkerInterface {
         }
         player?.replaceCurrentItem(with: setupPlayerItem())
         if isPausedManually {
-            return
+            player?.pause()
+        } else {
+            player?.play()
         }
-        player?.play()
     }
     
-    func togglePlayStatusManually() {
-        if player == nil {
-            setupPlayer()
-            return
-        }
-
+    func togglePlayStatusManually() -> Bool {
+        isPausedManually = !isPausedManually
         if player?.timeControlStatus == .playing {
             player?.pause()
-            return
         } else if player?.timeControlStatus == .paused {
             player?.play()
         }
-        
-        isPausedManually = !isPausedManually
+        return isPausedManually
     }
     
     func stopPlayer() {
-//        if player == nil {
-//            return
-//        }
-            playerStatusObserver?.invalidate()
-            playerStatusObserver = nil
-            player?.pause()
-//            player?.replaceCurrentItem(with: nil)
-            player = nil
+        player?.pause()
+        playerStatusObserver?.invalidate()
+        player = nil
     }
     
 }
