@@ -1,6 +1,7 @@
 // Copyright (c) 2010 Spotify AB
 #import "SPMediaKeyTap.h"
-#import "NSObject+SPInvocationGrabbing.h" // https://gist.github.com/511181, in submodule
+#import "NSObject+SPInvocationGrabbing.h"
+// https://gist.github.com/511181, in submodule
 
 @interface SPMediaKeyTap ()
 -(BOOL)shouldInterceptMediaKeyEvents;
