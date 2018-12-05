@@ -49,13 +49,7 @@ class Interactor: NSObject {
 extension Interactor: InteractorInterface {
     
     func handlePlayTap(sender: AnyObject?) {
-        let willPlay = audioPlayerWorker?.togglePlayStatusManually() == true
-        if willPlay {
-            networkWorker?.startWatchingConnection()
-        } else {
-            networkWorker?.stopWatchingConnection()
-            presenter?.displayStatus(PlayerStatusList.isPaused)
-        }
+        audioPlayerWorker?.togglePlayStatusManually()
     }
     
     func handleQuitTap() {
@@ -85,6 +79,11 @@ extension Interactor: InteractorInterface {
     func playerStatusChanged(status:PlayerStatusList) {
         if networkWorker?.isNetworkReachable == true {
             presenter?.displayStatus(status)
+            if status == .isPaused {
+                networkWorker?.stopWatchingConnection()
+            } else {
+                networkWorker?.startWatchingConnection()
+            }
         } else {
             presenter?.displayStatus(PlayerStatusList.isNetworkLost)
         }

@@ -57,16 +57,16 @@ class NetworkWorker: NSObject, NetworkWorkerInterface {
             currentReachabilityFlags = flags
             if connectedToNetwork(false) {
                 interactor?.connectionEstablished()
-                print("*** N lost")
-//                reachability = SCNetworkReachabilityCreateWithName(nil, GeneralURLs.stream.rawValue)
-                //try to reinit reachability// proxy
+                print("*** N alive")
+                // reachability = SCNetworkReachabilityCreateWithName(nil, GeneralURLs.stream.rawValue)
+                // try to reinit reachability // proxy
             } else {
                 interactor?.connectionLost()
-                print("*** N alive")
+                print("*** N lost")
             }
         }
     }
-    
+    //TODO: HANDLE change type of connection without disconnecting
     private func connectedToNetwork(_ forceRefresh: Bool) -> Bool {
         if forceRefresh {
             isListening = false
@@ -76,6 +76,7 @@ class NetworkWorker: NSObject, NetworkWorkerInterface {
         guard let currentReachabilityFlags = currentReachabilityFlags else { return false }
         let isReachable = currentReachabilityFlags.contains(.reachable)
         let needsConnection = currentReachabilityFlags.contains(.connectionRequired)
+        print("*** " + (isReachable ? "R" : "NR") + " " + (needsConnection ? "NC" : "NNC") + " " + (forceRefresh ? "force" : ""))
         return (isReachable && !needsConnection)
     }
 }
