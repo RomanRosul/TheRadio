@@ -29,31 +29,24 @@
                     </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="9RD-wA-1di"/>
-                <menuItem title="About" id="lf9-4C-cQ1">
+                <menuItem title="YedenRadio.com" id="EIh-nA-193">
                     <modifierMask key="keyEquivalentModifierMask"/>
-                    <menu key="submenu" title="About" id="rRL-zv-9EB">
-                        <items>
-                            <menuItem title="YedenRadio.com" id="EIh-nA-193">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                                <connections>
-                                    <action selector="webClickedWithSender:" target="Y2g-Us-B09" id="ord-ii-A2l"/>
-                                </connections>
-                            </menuItem>
-                            <menuItem title="Facebook" id="Ap5-o4-S4R">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                                <connections>
-                                    <action selector="facebookClickedWithSender:" target="Y2g-Us-B09" id="ww3-aj-YFR"/>
-                                </connections>
-                            </menuItem>
-                            <menuItem isSeparatorItem="YES" id="pFg-n1-vBM"/>
-                            <menuItem title="App info" id="bMN-OR-nZz">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                                <connections>
-                                    <action selector="aboutClickedWithSender:" target="Y2g-Us-B09" id="WMQ-Z3-Q51"/>
-                                </connections>
-                            </menuItem>
-                        </items>
-                    </menu>
+                    <connections>
+                        <action selector="webClickedWithSender:" target="Y2g-Us-B09" id="ord-ii-A2l"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Facebook" id="Ap5-o4-S4R">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="facebookClickedWithSender:" target="Y2g-Us-B09" id="ww3-aj-YFR"/>
+                    </connections>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="pFg-n1-vBM"/>
+                <menuItem title="About" id="bMN-OR-nZz">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="aboutClickedWithSender:" target="Y2g-Us-B09" id="WMQ-Z3-Q51"/>
+                    </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="b41-H1-7gB"/>
                 <menuItem title="Quit" id="1Yt-zM-bIJ">
