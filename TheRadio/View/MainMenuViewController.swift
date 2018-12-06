@@ -3,7 +3,7 @@
 //  TheRadio
 //
 //  Created by Roman Rosul on 5/11/18.
-//  Copyright © 2018 INDI. All rights reserved.
+//  Copyright © 2018 . All rights reserved.
 //
 
 protocol MainMenuViewControllerInterface: class {
@@ -46,6 +46,10 @@ class MainMenuViewController: NSObject {
     
     @IBAction func webClicked(sender: NSMenuItem) {
         interactor?.handleWebTap()
+    }
+    
+    @IBAction func aboutClicked(sender: NSMenuItem) {
+        interactor?.handleAboutTap()
     }
     
 }

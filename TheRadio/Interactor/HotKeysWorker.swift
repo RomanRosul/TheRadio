@@ -3,7 +3,7 @@
 //  TheRadio
 //
 //  Created by Roman Rosul on 12/11/18.
-//  Copyright © 2018 INDI. All rights reserved.
+//  Copyright © 2018 . All rights reserved.
 //
 
 import Cocoa

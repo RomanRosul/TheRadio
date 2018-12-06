@@ -3,7 +3,7 @@
 //  TheRadio
 //
 //  Created by Roman Rosul on 25/11/18.
-//  Copyright © 2018 INDI. All rights reserved.
+//  Copyright © 2018 . All rights reserved.
 //
 
 import Cocoa
@@ -13,6 +13,7 @@ protocol InteractorInterface: class {
     func handleQuitTap()
     func handleFacebookTap()
     func handleWebTap()
+    func handleAboutTap()
     func connectionLost()
     func connectionEstablished()
     func playerStatusChanged(status:PlayerStatusList)
@@ -25,6 +26,7 @@ class Interactor: NSObject {
     fileprivate var mediaKeysWorker: Any?
     fileprivate var audioPlayerWorker: AudioPlayerWorkerInterface?
     fileprivate var networkWorker: NetworkWorkerInterface?
+    var isReconnected = false
     
     init(_ presenterInstance: Presenter) {
         super.init()
@@ -38,11 +40,10 @@ class Interactor: NSObject {
         audioPlayerWorker?.forcePlay()
     }
     
- //TODO:   func handleInteruptions() {
+//TODO: handleInteruptions
 //        try? AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback, mode: AVAudioSessionModeDefault)
 //        try? AVAudioSession.sharedInstance().setActive(true)
 //        https://blog.erikvdwal.nl/resuming-avplayer-after-being-interrupted/
-//    }
    
 }
 
@@ -68,6 +69,10 @@ extension Interactor: InteractorInterface {
         }
     }
     
+    func handleAboutTap() {
+        presenter?.displayAbout()
+    }
+    
     func connectionLost() {
         audioPlayerWorker?.stopPlayer()
     }
@@ -79,10 +84,19 @@ extension Interactor: InteractorInterface {
     func playerStatusChanged(status:PlayerStatusList) {
         if networkWorker?.isNetworkReachable == true {
             presenter?.displayStatus(status)
-            if status == .isPaused {
+            if status == .isPaused || status == .isPlaying{
                 networkWorker?.stopWatchingConnection()
+                isReconnected = false
             } else {
                 networkWorker?.startWatchingConnection()
+                if !isReconnected {
+                    isReconnected = true
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 5) { [weak self] in
+                        if self?.isReconnected == true {
+                            self?.audioPlayerWorker?.forcePlay()
+                        }
+                    }
+                }                
             }
         } else {
             presenter?.displayStatus(PlayerStatusList.isNetworkLost)

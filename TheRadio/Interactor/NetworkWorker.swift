@@ -3,7 +3,7 @@
 //  TheRadio
 //
 //  Created by Roman Rosul on 23/11/18.
-//  Copyright © 2018 INDI. All rights reserved.
+//  Copyright © 2018 . All rights reserved.
 //
 
 import Foundation
@@ -18,7 +18,7 @@ protocol NetworkWorkerInterface {
 class NetworkWorker: NSObject, NetworkWorkerInterface {
    
     fileprivate weak var interactor: InteractorInterface?
-    private let reachability = SCNetworkReachabilityCreateWithName(nil, GeneralURLs.stream.rawValue)
+    private var reachability = SCNetworkReachabilityCreateWithName(nil, GeneralURLs.stream.rawValue)
     private var currentReachabilityFlags: SCNetworkReachabilityFlags?
     private var isListening = false
     var timer: Timer?
@@ -47,7 +47,6 @@ class NetworkWorker: NSObject, NetworkWorkerInterface {
     }
     
      func checkReachability() {
-        print("*** N check")
         guard let reachability = reachability else { return }
         var flags: SCNetworkReachabilityFlags
         flags = SCNetworkReachabilityFlags()
@@ -57,16 +56,12 @@ class NetworkWorker: NSObject, NetworkWorkerInterface {
             currentReachabilityFlags = flags
             if connectedToNetwork(false) {
                 interactor?.connectionEstablished()
-                print("*** N alive")
-                // reachability = SCNetworkReachabilityCreateWithName(nil, GeneralURLs.stream.rawValue)
-                // try to reinit reachability // proxy
             } else {
                 interactor?.connectionLost()
-                print("*** N lost")
             }
         }
     }
-    //TODO: HANDLE change type of connection without disconnecting
+    
     private func connectedToNetwork(_ forceRefresh: Bool) -> Bool {
         if forceRefresh {
             isListening = false
@@ -76,7 +71,6 @@ class NetworkWorker: NSObject, NetworkWorkerInterface {
         guard let currentReachabilityFlags = currentReachabilityFlags else { return false }
         let isReachable = currentReachabilityFlags.contains(.reachable)
         let needsConnection = currentReachabilityFlags.contains(.connectionRequired)
-        print("*** " + (isReachable ? "R" : "NR") + " " + (needsConnection ? "NC" : "NNC") + " " + (forceRefresh ? "force" : ""))
         return (isReachable && !needsConnection)
     }
 }

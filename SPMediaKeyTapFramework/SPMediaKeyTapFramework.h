@@ -3,7 +3,7 @@
 //  SPMediaKeyTapFramework
 //
 //  Created by Roman Rosul on 9/11/18.
-//  Copyright © 2018 INDI. All rights reserved.
+//  Copyright © 2018 . All rights reserved.
 //
 
 //The Source: https://github.com/nevyn/SPMediaKeyTap

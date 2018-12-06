@@ -3,7 +3,7 @@
 //  TheRadio
 //
 //  Created by Roman Rosul on 12/11/18.
-//  Copyright © 2018 INDI. All rights reserved.
+//  Copyright © 2018 . All rights reserved.
 //
 
 import Cocoa
@@ -34,7 +34,9 @@ class AudioPlayerWorker: NSObject {
    fileprivate func setupPlayerItem() -> AVPlayerItem? {
         let path = GeneralURLs.stream.rawValue
         guard let url = URL.init(string: path) else { return nil}
-        return AVPlayerItem.init(url: url)
+        let item = AVPlayerItem.init(url: url)
+        item.canUseNetworkResourcesForLiveStreamingWhilePaused = true
+        return item
     }
     
     fileprivate func setupPlayer() {
