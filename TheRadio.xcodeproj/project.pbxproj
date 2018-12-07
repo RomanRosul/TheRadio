@@ -16,7 +16,8 @@
 		D975E49F2167AE4300582E5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D975E49E2167AE4300582E5B /* AppDelegate.swift */; };
 		D975E4A12167AE4500582E5B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D975E4A02167AE4500582E5B /* Assets.xcassets */; };
 		D975E4A42167AE4500582E5B /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = D975E4A22167AE4500582E5B /* MainMenu.xib */; };
-		D9A7A69921B55DE600FA6AB5 /* SPMediaKeyTapFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9A7A69821B55DE600FA6AB5 /* SPMediaKeyTapFramework.framework */; };
+		D998890521B9B080008989FB /* SPMediaKeyTapFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D998890421B9B080008989FB /* SPMediaKeyTapFramework.framework */; };
+		D998890621B9B16E008989FB /* SPMediaKeyTapFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D998890421B9B080008989FB /* SPMediaKeyTapFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D9B191082190921C005366DC /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B191072190921C005366DC /* MainMenuViewController.swift */; };
 		D9B9DC3421958C3A00E56233 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9B9DC3321958C3A00E56233 /* Cocoa.framework */; };
 		D9C053BB21A8328900087F17 /* NetworkWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C053BA21A8328900087F17 /* NetworkWorker.swift */; };
@@ -29,6 +30,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				D998890621B9B16E008989FB /* SPMediaKeyTapFramework.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -48,7 +50,7 @@
 		D975E4A32167AE4500582E5B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		D975E4A52167AE4500582E5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D975E4A62167AE4500582E5B /* TheRadio.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TheRadio.entitlements; sourceTree = "<group>"; };
-		D9A7A69821B55DE600FA6AB5 /* SPMediaKeyTapFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SPMediaKeyTapFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D998890421B9B080008989FB /* SPMediaKeyTapFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SPMediaKeyTapFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9B191072190921C005366DC /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
 		D9B9DC2E219582BA00E56233 /* TheRadio-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TheRadio-Bridging-Header.h"; sourceTree = "<group>"; };
 		D9B9DC3321958C3A00E56233 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -60,7 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D9A7A69921B55DE600FA6AB5 /* SPMediaKeyTapFramework.framework in Frameworks */,
+				D998890521B9B080008989FB /* SPMediaKeyTapFramework.framework in Frameworks */,
 				D9B9DC3421958C3A00E56233 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -149,7 +151,7 @@
 		D9B9DC3221958C3A00E56233 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D9A7A69821B55DE600FA6AB5 /* SPMediaKeyTapFramework.framework */,
+				D998890421B9B080008989FB /* SPMediaKeyTapFramework.framework */,
 				D9B9DC3321958C3A00E56233 /* Cocoa.framework */,
 			);
 			name = Frameworks;
@@ -375,7 +377,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 39KAHAGNTM;
+				DEVELOPMENT_TEAM = 7PAFDZKTNZ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -386,7 +388,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.rr.radio.TheRadio;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rr.radio;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "TheRadio/SupportingFiles/TheRadio-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -401,7 +403,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 39KAHAGNTM;
+				DEVELOPMENT_TEAM = 7PAFDZKTNZ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -412,7 +414,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.rr.radio.TheRadio;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rr.radio;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "TheRadio/SupportingFiles/TheRadio-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;

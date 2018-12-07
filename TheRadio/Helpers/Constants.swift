@@ -12,7 +12,7 @@ enum GeneralURLs: String {
     case website = "http://www.yedenradio.com/"
     case facebook = "https://www.facebook.com/radioyeden/"
     case stream = "http://31.128.79.192:8000/live"
-    case repo = "https://github.com/RomanRosul/TheRadio/blob/master/LICENSE"
+    case repo = "https://github.com/RomanRosul/TheRadio/blob/master/README.md"
 }
 
 enum PlayerStatusList: Int {
