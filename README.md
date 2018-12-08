@@ -1,8 +1,8 @@
-"The Radio" is an open source app, distributed under <a href="https://github.com/RomanRosul/TheRadio/blob/master/LICENSE">MIT license.</a> It is configured for playing a stream of YedenRadio.com, and is tried to make you happy.
+<a href="https://github.com/RomanRosul/TheRadio/releases/download/1/YedenRadioOSX.dmg">>>>> DOWNLOAD HERE <<<<</a>
+
+"The Radio" is an open source app, distributed under the <a href="https://github.com/RomanRosul/TheRadio/blob/master/LICENSE">MIT license.</a> It is configured for playing a stream of YedenRadio.com, and is tried to make you happy.
 
 Please notice "The Radio" is not responsible for any content on YedenRadio.com. It doesn’t check in any way the accuracy or completeness of the information delivered. "The Radio" does not accept any liability arising from inaccuracy or omission in this information.
-
-<a href="https://github.com/RomanRosul/TheRadio/releases/download/1.1/TheRadio.dmg">DOWNLOAD</a>
 
 Mac Menu Bar player for yedenradio.com
 
