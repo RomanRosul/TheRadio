@@ -30,6 +30,15 @@
 	<dict>
 		<key>NSExceptionDomains</key>
 		<dict>
+			<key>live.yedenradio.com</key>
+			<dict>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+				<key>NSThirdPartyExceptionRequiresForwardSecrecy</key>
+				<false/>
+			</dict>
 			<key>http://31.128.79.192</key>
 			<dict>
 				<key>NSExceptionAllowsInsecureHTTPLoads</key>

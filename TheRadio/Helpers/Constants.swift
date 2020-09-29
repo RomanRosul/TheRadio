@@ -11,7 +11,7 @@ import Cocoa
 enum GeneralURLs: String {
     case website = "http://www.yedenradio.com/"
     case facebook = "https://www.facebook.com/radioyeden/"
-    case stream = "http://31.128.79.192:8000/live"
+    case stream = "http://live.yedenradio.com:9015/yedenradio" 
     case repo = "https://github.com/RomanRosul/TheRadio/blob/master/README.md"
 }
 
