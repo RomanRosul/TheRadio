@@ -1,4 +1,4 @@
-<a href="https://github.com/RomanRosul/TheRadio/releases/download/1/YedenRadioOSX.dmg">>>>> DOWNLOAD HERE <<<<</a>
+<a href="https://github.com/RomanRosul/TheRadio/releases/download/1.2/YedenRadio.dmg">>>>> DOWNLOAD HERE <<<<</a>
 
 "The Radio" is an open source app, distributed under the <a href="https://github.com/RomanRosul/TheRadio/blob/master/LICENSE">MIT license.</a> It is configured for playing a stream of YedenRadio.com, and is tried to make you happy.
 
